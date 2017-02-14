@@ -6,6 +6,13 @@ var initialize = function(){
 
   mainmap.addMarker(center);
   mainmap.addClickEvent();
+
+  var merlin = document.querySelector('#merlin');
+  merlin.onclick = function() {
+    var coords = { lat: 32.3078, lng: -64.7505}
+    mainmap.addMarker(coords);
+    mainmap.setCenter(coords);
+  }
 }
 
 window.onload = initialize;

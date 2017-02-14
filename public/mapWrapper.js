@@ -1,6 +1,6 @@
 var MapWrapper = function(coords, zoomer, container){
 
-  this.googleMap = new google.maps.Map(container, {
+    this.googleMap = new google.maps.Map(container, {
     center: coords,
     zoom: zoomer
   });
@@ -32,5 +32,9 @@ MapWrapper.prototype = {
       var position = {lat: event.latLng.lat(), lng: event.latLng.lng()}
       this.addMarker(position);
     }.bind(this));
+  },
+
+  setCenter: function(coords) {
+    this.googleMap.setCenter(coords);
   }
 }
